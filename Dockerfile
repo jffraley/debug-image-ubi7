@@ -17,8 +17,8 @@ RUN curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 RUN ibmcloud plugin install container-service
 RUN ibmcloud plugin install container-registry
 
-#COPY . /root/.
-#WORKDIR /root/
+COPY docker/. /root/.
+WORKDIR /root/
 
 CMD ["/bin/sleep", "8h"]
 #CMD tail -f /dev/null

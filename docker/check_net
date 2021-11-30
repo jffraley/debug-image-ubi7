@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#for i in `kubectl get pod -n ibm-system |grep Runn|grep provider |awk '{print $1}'`;
+for ns in 10.0.80.11 10.0.80.12;
+do echo $ns;
+echo "##### ip route #######"
+echo
+   ip route get $ns;
+echo
+echo "######## ping ########"
+echo
+   ping -c3 $ns;
+echo
+echo "##### traceroute #####"
+echo
+   traceroute -p 53 $ns;
+echo
+echo "######### dig ########"
+echo
+   dig +short @$ns cloud.ibm.com
+   dig +short @$ns ibm.com
+echo
+echo
+done
