@@ -17,6 +17,10 @@ RUN curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 RUN ibmcloud plugin install container-service
 RUN ibmcloud plugin install container-registry
 
+### install homebrew ###
+#RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
 COPY docker/. /root/.
 WORKDIR /root/
 
