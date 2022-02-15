@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi7/ubi
 
 LABEL maintainer="John Fraley jffraley@us.ibm.com"
-LABEL description="Simple container with some useful tools for DB2ing.  Shuts down after 8 hours."
+LABEL description="Simple container with some useful tools for testing network."
 
 # Install the applications we want
 RUN yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
@@ -24,5 +24,3 @@ RUN ibmcloud plugin install container-registry
 COPY docker/. /root/.
 WORKDIR /root/
 
-CMD ["/bin/sleep", "8h"]
-#CMD tail -f /dev/null
